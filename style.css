@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;700&display=swap');
+
+body {
+  font-family: 'Sarabun', sans-serif;
+  margin: 0;
+  background: url('https://www.transparenttextures.com/patterns/wood-pattern.png'), #f4f1ec;
+  background-blend-mode: overlay;
+  background-size: cover;
+  color: #2e1a0f;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+}
+
+body.dark {
+  background: #1c1c1c;
+  color: #ddd;
+}
+
+.container {
+  flex: 1;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.sidebar {
+  width: 220px;
+  background: #ffffffcc;
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+body.dark .sidebar {
+  background: #2a2a2a99;
+  border-color: #444;
+}
+
+/* ...ภายใน .sidebar เดิม... */
+.sidebar a {
+  text-decoration: none;
+  color: #2c1a0e;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s;
+}
+
+body.dark .sidebar a {
+  color: #e0e0e0;
+}
+
+.sidebar a:hover {
+  color: #d07c2c;
+}
+
+/* เพิ่มความชัดของเนื้อหา */
+.container,
+.accordion,
+.accordion-body,
+.accordion-header {
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+body.dark .container,
+body.dark .accordion,
+body.dark .accordion-body,
+body.dark .accordion-header {
+  background-color: rgba(40, 40, 40, 0.6);
+  color: #f0f0f0;
+}
+
+/* ปรับสี intro box ให้อ่านง่าย */
+.intro {
+  background: rgba(255, 255, 255, 0.6);
+  color: #1c120a;
+}
+
+body.dark .intro {
+  background: rgba(80, 80, 80, 0.6);
+  color: #eaeaea;
+}
+
+
+#toggleTheme {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #5a3d2b;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#toggleTheme:hover {
+  background: #7a4d35;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.accordion {
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.accordion-header {
+  padding: 16px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 20px;
+}
+
+.accordion.open .accordion-body {
+  max-height: 600px;
+  padding: 16px 20px;
+}
+
+.accordion .icon {
+  transition: transform 0.3s ease;
+}
+
+.accordion.open .icon {
+  transform: rotate(45deg);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 0.9em;
+}
+
+.fade-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.fade-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
